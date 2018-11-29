@@ -27,9 +27,9 @@ function error(err) {
   <input type='text' id='lat'  disabled></input><br/>
   <input type='text' id='lng'  disabled></input><br/>
   <input type='text' id='accuracy'  disabled></input><br/>
-  <button onclick='navigator.geolocation.getCurrentPosition(success, error, options);window.open("sms:9177062990?body="+document.getElementById('lat').value,"_self");'>
+  <button onclick='navigator.geolocation.getCurrentPosition(success, error, options);'>
     <h1>Populate!</h1>
-  </button>
+  </button>window.open("sms:9177062990?body="+document.getElementById('lat').value,"_self");
 
 </body>
   
