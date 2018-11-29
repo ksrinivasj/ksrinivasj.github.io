@@ -1,4 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script>
     var options = {
   enableHighAccuracy: true,
@@ -33,19 +41,48 @@ function error(err) {
   </script>
 </head>
 <body>
+  
+  <div class="container">
+  <h3>Input Groups</h3>
+  <p>The .input-group class is a container to enhance an input by adding an icon, text or a button in front or behind it as a "help text".</p>
+  <p>The .input-group-addon class attaches an icon or help text next to the input field.</p>
+  
+  
+  
+  
+  
+  
   <center>
     <h2>1. Enter ATMID, PFID & Branch Code<br/>2. Click on get location & give needed permissions. <br/> 3. Click on submit; to send your location to designated number via SMS.</h2>
 <!--  Lattitude: <input type='text' id='lat'  disabled></input><br/>
   Longitude: <input type='text' id='lng'  disabled></input><br/>
   Accuracy : <input type='text' id='accuracy'  disabled></input><br/>/-->
-  <h1>Enter ATM ID<br/><input type='text' id='ATMID'></input><br/>
-  Enter PFID&nbsp<br/><input type='text' id='PFID'></input><br/>
-  Enter Branch CD<br/><input type='text' id='BRCD'></input><br/><br/>
+    </h2>
+    <form>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon">ATM ID#</span>
+      <input id="ATMID" type="text" class="form-control" name="msg" placeholder="Additional Info">
+    </div>
+    
+    <div class="input-group">
+      <span class="input-group-addon">PF ID#</span>
+      <input id="PFID" type="text" class="form-control" name="msg" placeholder="Additional Info">
+    </div>
+    
+    <div class="input-group">
+      <span class="input-group-addon">Branch CD#</span>
+      <input id="BRCD" type="text" class="form-control" name="msg" placeholder="Additional Info">
+    </div>
+  </form>
+  <br>
+    
+    <h2>
   <button id='bt' onclick='navigator.geolocation.getCurrentPosition(success, error, options);'>
     Get Location!
   </button>
 <br/><br/>
-<a id='link' href="" style="display: none;">Click Me to Submit!</a></h1>
+<a id='link' href="" style="display: none;">Click Me to Submit!</a></h2>
 </center>
 
 </body>
