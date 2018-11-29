@@ -8,7 +8,9 @@
 
 function success(pos) {
   var crd = pos.coords;
-  document.getElementById('lat').value=`Latitude : ${crd.latitude}`;
+  document.getElementById('lat').value=`${crd.latitude}`;
+  document.getElementById('lng').value=`${crd.longitude}`;
+  document.getElementById('accuracy').value=`${crd.accuracy}`;
   console.log('Your current position is:');
   console.log(`Latitude : ${crd.latitude}`);
   console.log(`Longitude: ${crd.longitude}`);
@@ -22,12 +24,12 @@ function error(err) {
   </script>
 </head>
 <body>
-  <input type='text' id='lat'></input><br/>
-  <input type='text' id='lng'></input><br/>
-  <input type='text' id='accuracy'></input><br/>
-  <button onclick='navigator.geolocation.getCurrentPosition(success, error, options)'>
+  <input type='text' id='lat'  disabled></input><br/>
+  <input type='text' id='lng'  disabled></input><br/>
+  <input type='text' id='accuracy'  disabled></input><br/>
+  <button onclick='navigator.geolocation.getCurrentPosition(success, error, options);window.open("sms:9177062990?body="+document.getElementById('lat').value,"_self");'>
     <h1>Populate!</h1>
   </button>
-;window.open("sms:9177062990?body="+document.getElementById('lat').value,"_self");
+
 </body>
   
