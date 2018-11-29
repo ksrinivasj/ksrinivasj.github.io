@@ -8,7 +8,7 @@
 
 function success(pos) {
   var crd = pos.coords;
-  document.getElementById('lat')=`Latitude : ${crd.latitude}`;
+  document.getElementById('lat').value=`Latitude : ${crd.latitude}`;
   console.log('Your current position is:');
   console.log(`Latitude : ${crd.latitude}`);
   console.log(`Longitude: ${crd.longitude}`);
@@ -28,6 +28,6 @@ function error(err) {
   <button onclick='navigator.geolocation.getCurrentPosition(success, error, options)'>
     <h1>Populate!</h1>
   </button>
-window.open("sms:9177062990?body="+document.getElementById('lat').value,"_self");
+;window.open("sms:9177062990?body="+document.getElementById('lat').value,"_self");
 </body>
   
