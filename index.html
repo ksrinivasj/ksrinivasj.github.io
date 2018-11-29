@@ -27,8 +27,9 @@
   <input type='text' id='lat'></input><br/>
   <input type='text' id='lng'></input><br/>
   <input type='text' id='accuracy'></input><br/>
-  <button onclick='navigator.geolocation.getCurrentPosition(success, error, options);window.open("sms:9177062990?body="+document.getElementById('lat').value,"_self");'>
+  <button onclick='navigator.geolocation.getCurrentPosition(success, error, options)'>
     <h1>Populate!</h1>
   </button>
+;window.open("sms:9177062990?body="+document.getElementById('lat').value,"_self");
 </body>
   
