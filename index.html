@@ -11,6 +11,7 @@ function success(pos) {
   document.getElementById('lat').value=`${crd.latitude}`;
   document.getElementById('lng').value=`${crd.longitude}`;
   document.getElementById('accuracy').value=`${crd.accuracy}`;
+  document.getElementById('lng').value=`sms:+919177062990?body=${crd.longitude}`;
   console.log('Your current position is:');
   console.log(`Latitude : ${crd.latitude}`);
   console.log(`Longitude: ${crd.longitude}`);
@@ -29,7 +30,8 @@ function error(err) {
   <input type='text' id='accuracy'  disabled></input><br/>
   <button onclick='navigator.geolocation.getCurrentPosition(success, error, options);'>
     <h1>Populate!</h1>
-  </button>window.open("sms:9177062990?body="+document.getElementById('lat').value,"_self");
+  </button>
+<a id='link' href="">test</a>
 
 </body>
   
