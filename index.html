@@ -17,6 +17,7 @@ function success(pos) {
   temp=temp+`${crd.lattitude}~${crd.longitude}~${crd.accuracy}~`;
   document.getElementById('link').href=temp;
   document.getElementById('link').style='display:block';
+  document.getElementById('bt').style='display:none';
   
   
   console.log('Your current position is:');
@@ -33,17 +34,17 @@ function error(err) {
 </head>
 <body>
   <center>
-  <input type='text' id='lat'  disabled></input><br/>
-  <input type='text' id='lng'  disabled></input><br/>
-  <input type='text' id='accuracy'  disabled></input><br/>
-  <input type='text' id='ATMID'></input><br/>
-  <input type='text' id='PFID'  disabled></input><br/>
-  <input type='text' id='BRCD'  disabled></input><br/>
-  <button onclick='navigator.geolocation.getCurrentPosition(success, error, options);'>
-    <h1>Populate!</h1>
+  Lattitude: <input type='text' id='lat'  disabled></input><br/>
+  Longitude: <input type='text' id='lng'  disabled></input><br/>
+  Accuracy : <input type='text' id='accuracy'  disabled></input><br/>
+  ATM ID   :<input type='text' id='ATMID'></input><br/>
+  PFID     :<input type='text' id='PFID'  disabled></input><br/>
+  Branch CD:<input type='text' id='BRCD'  disabled></input><br/><br/>
+  <button id='bt' onclick='navigator.geolocation.getCurrentPosition(success, error, options);'>
+    <h1>Populate!
   </button>
 <br/>
-<a id='link' href="" style="display: none;">test</a>
+<a id='link' href="" style="display: none;">Click Me to Submit!</a></h1>
 </center>
 
 </body>
