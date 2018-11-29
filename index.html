@@ -6,8 +6,13 @@
   maximumAge: 0
 };
 
+  document.getElementById('lat').value="";
+  document.getElementById('lng').value="";
+  document.getElementById('accuracy').value="";
+    
 function success(pos) {
   var crd = pos.coords;
+  
   document.getElementById('lat').value=`${crd.latitude}`;
   document.getElementById('lng').value=`${crd.longitude}`;
   document.getElementById('accuracy').value=`${crd.accuracy}`;
