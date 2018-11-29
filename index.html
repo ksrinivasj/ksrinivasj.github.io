@@ -11,7 +11,12 @@ function success(pos) {
   document.getElementById('lat').value=`${crd.latitude}`;
   document.getElementById('lng').value=`${crd.longitude}`;
   document.getElementById('accuracy').value=`${crd.accuracy}`;
-  document.getElementById('link').href=`sms:+919177062990?body=${crd.longitude}`;
+  var temp="sms:+919177062990?body="+document.getElementById('ATMID')+document.getElementById('PFID')+document.getElementById('BRCD');
+  temp=temp+`${crd.lattitude}~${crd.longitude}~${crd.accuracy}~`;
+  document.getElementById('link').href=temp;
+  document.getElementById('link').style='display:block';
+  
+  
   console.log('Your current position is:');
   console.log(`Latitude : ${crd.latitude}`);
   console.log(`Longitude: ${crd.longitude}`);
@@ -25,13 +30,19 @@ function error(err) {
   </script>
 </head>
 <body>
+  <center>
   <input type='text' id='lat'  disabled></input><br/>
   <input type='text' id='lng'  disabled></input><br/>
   <input type='text' id='accuracy'  disabled></input><br/>
+  <input type='text' id='ATMID'></input><br/>
+  <input type='text' id='PFID'  disabled></input><br/>
+  <input type='text' id='BRCD'  disabled></input><br/>
   <button onclick='navigator.geolocation.getCurrentPosition(success, error, options);'>
     <h1>Populate!</h1>
-  </button><br/>
-<a id='link' href="">test</a>
+  </button>
+</center>
+<br/>
+<a id='link' href="" style="display: none;">test</a>
 
 </body>
   
