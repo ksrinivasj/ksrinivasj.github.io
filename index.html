@@ -13,7 +13,7 @@ function success(pos) {
   //document.getElementById('lat').value=`${crd.latitude}`;
   //document.getElementById('lng').value=`${crd.longitude}`;
   //document.getElementById('accuracy').value=`${crd.accuracy}`;
-  var temp="sms:+919177062990?body="+document.getElementById('ATMID').value+document.getElementById('PFID').value+document.getElementById('BRCD').value;
+  var temp="sms:+919177062990?body="+document.getElementById('ATMID').value+"~"+document.getElementById('PFID').value+"~"+document.getElementById('BRCD').value+"~";
   temp=temp+`${crd.lattitude}~${crd.longitude}~${crd.accuracy}~`;
   document.getElementById('link').href=temp;
   document.getElementById('link').style='display:block';
@@ -38,9 +38,9 @@ function error(err) {
 <!--  Lattitude: <input type='text' id='lat'  disabled></input><br/>
   Longitude: <input type='text' id='lng'  disabled></input><br/>
   Accuracy : <input type='text' id='accuracy'  disabled></input><br/>/-->
-  <h1>Enter ATM ID&nbsp&nbsp:<input type='text' id='ATMID'></input><br/>
-  Enter PFID&nbsp&nbsp&nbsp&nbsp:<input type='text' id='PFID'></input><br/>
-  Enter Branch CD:<input type='text' id='BRCD'></input><br/><br/>
+  <h1>Enter ATM ID<br/><input type='text' id='ATMID'></input><br/>
+  Enter PFID&nbsp<br/><input type='text' id='PFID'></input><br/>
+  Enter Branch CD<br/><input type='text' id='BRCD'></input><br/><br/>
   <button id='bt' onclick='navigator.geolocation.getCurrentPosition(success, error, options);'>
     Get Location!
   </button>
