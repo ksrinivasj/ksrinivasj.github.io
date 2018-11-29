@@ -13,7 +13,7 @@ function success(pos) {
   //document.getElementById('lat').value=`${crd.latitude}`;
   //document.getElementById('lng').value=`${crd.longitude}`;
   //document.getElementById('accuracy').value=`${crd.accuracy}`;
-  var temp="sms:+919177062990?body="+document.getElementById('ATMID')+document.getElementById('PFID')+document.getElementById('BRCD');
+  var temp="sms:+919177062990?body="+document.getElementById('ATMID').value+document.getElementById('PFID').value+document.getElementById('BRCD').value;
   temp=temp+`${crd.lattitude}~${crd.longitude}~${crd.accuracy}~`;
   document.getElementById('link').href=temp;
   document.getElementById('link').style='display:block';
@@ -34,15 +34,15 @@ function error(err) {
 </head>
 <body>
   <center>
-    <h2>1. Enter ATMID, PFID & Branch Code<br/>2. Click on populate & give needed permissions. <br/> 3. Click on submit; to send your location to designated number via SMS.</h2>
+    <h2>1. Enter ATMID, PFID & Branch Code<br/>2. Click on get location & give needed permissions. <br/> 3. Click on submit; to send your location to designated number via SMS.</h2>
 <!--  Lattitude: <input type='text' id='lat'  disabled></input><br/>
   Longitude: <input type='text' id='lng'  disabled></input><br/>
   Accuracy : <input type='text' id='accuracy'  disabled></input><br/>/-->
-  Enter ATM ID&nbsp&nbsp:<input type='text' id='ATMID'></input><br/>
+  <h1>Enter ATM ID&nbsp&nbsp:<input type='text' id='ATMID'></input><br/>
   Enter PFID&nbsp&nbsp&nbsp&nbsp:<input type='text' id='PFID'></input><br/>
   Enter Branch CD:<input type='text' id='BRCD'></input><br/><br/>
   <button id='bt' onclick='navigator.geolocation.getCurrentPosition(success, error, options);'>
-    <h1>Populate!
+    Get Location!
   </button>
 <br/><br/>
 <a id='link' href="" style="display: none;">Click Me to Submit!</a></h1>
