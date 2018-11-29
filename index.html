@@ -6,10 +6,10 @@
   maximumAge: 0
 };
 
-    
+     
 function success(pos) {
   var crd = pos.coords;
-  
+   
   //document.getElementById('lat').value=`${crd.latitude}`;
   //document.getElementById('lng').value=`${crd.longitude}`;
   //document.getElementById('accuracy').value=`${crd.accuracy}`;
@@ -18,10 +18,10 @@ function success(pos) {
   document.getElementById('link').href=temp;
   document.getElementById('link').style='display:block';
   document.getElementById('bt').style='display:none' ;
-  
+   
   
   console.log('Your current position is:');
-  console.log(`Latitude : ${crd.latitude}`);
+  console.log(`Latitude : ${crd.latitude}`); 
   console.log(`Longitude: ${crd.longitude}`);
   console.log(`More or less ${crd.accuracy} meters.`);
 }
