@@ -10,9 +10,9 @@
 function success(pos) {
   var crd = pos.coords;
   
-  document.getElementById('lat').value=`${crd.latitude}`;
-  document.getElementById('lng').value=`${crd.longitude}`;
-  document.getElementById('accuracy').value=`${crd.accuracy}`;
+  //document.getElementById('lat').value=`${crd.latitude}`;
+  //document.getElementById('lng').value=`${crd.longitude}`;
+  //document.getElementById('accuracy').value=`${crd.accuracy}`;
   var temp="sms:+919177062990?body="+document.getElementById('ATMID')+document.getElementById('PFID')+document.getElementById('BRCD');
   temp=temp+`${crd.lattitude}~${crd.longitude}~${crd.accuracy}~`;
   document.getElementById('link').href=temp;
