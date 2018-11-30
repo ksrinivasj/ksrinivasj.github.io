@@ -21,10 +21,19 @@ function success(pos) {
   //document.getElementById('lat').value=`${crd.latitude}`;
   //document.getElementById('lng').value=`${crd.longitude}`;
   //document.getElementById('accuracy').value=`${crd.accuracy}`;
-  var temp="sms:+919177062990?body="+document.getElementById('ATMID').value+"~"+document.getElementById('PFID').value+"~"+document.getElementById('BRCD').value+"~";
-  temp=temp+`${crd.lattitude}~${crd.longitude}~${crd.accuracy}~`;
-  document.getElementById('link').href=temp;
-  document.getElementById('link').style='display:block';
+  if(${crd.accuracy}>100)
+    alert("Low Accuracy, please try after domw time");
+  var tempa="sms:+919177062990?body=";
+  var tempi="sms:+919177062990&body=";
+  var body=document.getElementById('ATMID').value+"~"+document.getElementById('PFID').value+"~"+document.getElementById('BRCD').value+"~";
+  body=body+`${crd.lattitude}~${crd.longitude}~${crd.accuracy}~`;
+  
+  document.getElementById('linka').href=tempa+body;
+  document.getElementById('linka').style='display:block';
+  
+  document.getElementById('linki').href=tempi+body;
+  document.getElementById('linki').style='display:block';
+  
   document.getElementById('bt').style='display:none' ; 
    
   
@@ -34,8 +43,22 @@ function success(pos) {
   console.log(`More or less ${crd.accuracy} meters.`);
 }
 
-function error(err) {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
+function error(error) {
+  console.warn(`ERROR(${error.code}): ${error.message}`);
+  switch(error.code) {
+        case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable, please use chrome/safari; not third party browsers.")
+            break;
+        case error.TIMEOUT:
+            alert("The request to get user location timed out.")
+            break;
+        case error.UNKNOWN_ERROR:
+            alert(x.innerHTML = "An unknown error occurred.")
+            break;
+    }
 }
 
   </script>
@@ -78,7 +101,11 @@ function error(err) {
     Get Location!
   </button>
 <br/><br/>
-<a id='link' href="" style="display: none;">Click Me to Submit!</a></h2>
+<a id='linka' href="" style="display: none;">Submit[Android]</a>
+&nbsp&nbsp
+<a id='linki' href="" style="display: none;">Submit[iPhone]</a>
+    <br/>
+    </h2>
 </center>
 
 </body>
