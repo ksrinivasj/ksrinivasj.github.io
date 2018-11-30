@@ -23,7 +23,7 @@
   enableHighAccuracy: true,
 
   timeout: 5000,
-~
+
   maximumAge: 0
 
 };
@@ -36,7 +36,10 @@ function success(pos) {
 
   var crd = pos.coords;
 
-   
+   if(crd.accuracy<1000)
+   {
+     alert('Not able to locate accurately, try again in 1 minute');
+   }
 
   //document.getElementById('lat').value=`${crd.latitude}`;
 
@@ -50,9 +53,7 @@ function success(pos) {
 
   var tempi="sms:+919177062990&body=";
 
-  var body1=document.getElementById('ATMID').value+"~"+document.getElementById('PFID').value+"~"+document.getElementById('BRCD').value+"~";
-
-  body1=body1+`${crd.lattitude}~${crd.longitude}~${crd.accuracy}~`;
+  var body1=document.getElementById('ATMID').value+"~"+document.getElementById('PFID').value+"~"+document.getElementById('BRCD').value+"~"+`${crd.lattitude}~${crd.longitude}~${crd.accuracy}~`;
 
   
 
@@ -94,7 +95,7 @@ function error(error) {
 
         case error.PERMISSION_DENIED:
 
-            alert("User denied the request for Geolocation.");
+            alert("Geolocation not enabled! Please ensure GPS is on, and that you provide permission.");
 
             break;
 
