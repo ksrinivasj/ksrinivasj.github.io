@@ -36,11 +36,6 @@ function success(pos) {
 
   var crd = pos.coords;
 
-   if(crd.accuracy<1000)
-   {
-     alert('Not able to locate accurately, try again in 1 minute');
-     return false;
-   }
 
   //document.getElementById('lat').value=`${crd.latitude}`;
 
